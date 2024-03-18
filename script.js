@@ -11,10 +11,16 @@ function setup() {
   hint: use the "new" keyword with the constructor function MyClass()
   assign the result of this function to myObj1 and then to myObj2
   */
+ myObj1 = new MyClass(100,100);
+ myObj2 = new MyClass(300, 200);
 }
 
 function draw() {
   background(200);
+  myObj1. display();
+  myObj1.move();
+  myObj2. display();
+  myObj2.move();
   // add code here to make your objects move and display on canvas
   
 }
@@ -36,6 +42,10 @@ function MyClass(tempX, tempY){
     this.y += this.ySpeed;
     
     //maybe add some code to keep it on the canvas ...
+    if (this.x > width || this.x < 0)
+ this.x += this.xSpeed;
+ this.y += this. ySpeed;
+    
   }
   
   this.display = function (){
